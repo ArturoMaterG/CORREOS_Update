@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- component -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css">
+<div class="flex flex-wrap -mx-3 mb-5">
+  <div class="w-full max-w-full px-3 mb-6  mx-auto">
+    <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
+      <div class="relative flex flex-col min-w-0 break-words border border-dashed bg-clip-border rounded-2xl border-stone-200 bg-light/30">
+        <!-- card header -->
+        <div class="px-9 pt-5 flex justify-between items-stretch flex-wrap min-h-[70px] pb-0 bg-transparent">
+          <h3 class="flex flex-col items-start justify-center m-2 ml-0 font-medium text-xl/tight text-dark">
+            <span class="mr-3 font-semibold text-dark">Create Newsletters</span>
+            <span class="mt-1 font-medium text-secondary-dark text-lg/normal">All </span>
+          </h3>
+          <div class="relative flex flex-wrap items-center my-2">
+            <a href="" class="inline-block text-[.925rem] font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-150 ease-in-out text-light-inverse bg-light-dark border-light shadow-none border-0 py-2 px-5 hover:bg-secondary active:bg-light focus:bg-light"> See other projects </a>
+          </div>
+        </div>
+        <!-- end card header -->
+        <!-- card body  -->
+        <div class="flex-auto block py-8 pt-6 px-9">
+          <div class="overflow-x-auto">
+
+
+            <form method="POST">
+              {% csrf_token %}
+
+
+            
+            <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+              Name
+
+            </label>
+            {{form.name}}
+
+            <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+              Subject
+
+            </label>
+            {{form.subject}}
+
+            <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+              Body
+
+            </label>
+            {{form.body}}
+
+            <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+              Email
+
+            </label>
+            {{form.email}}
+
+            <label class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+              Status
+
+            </label>
+            {{form.status}}
+        
+
+
+            <button  class="group relative h-12 w-48 overflow-hidden rounded-2xl bg-green-500 text-lg font-bold text-white" type="submit">
+              Create Post
+              
+              <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+            </button>
+
+
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex flex-wrap -mx-3 mb-5">
+  <div class="w-full max-w-full sm:w-3/4 mx-auto text-center">
+   
+  </div>
+</div>
+{% endblock content %}
+
+
+
